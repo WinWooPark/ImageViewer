@@ -19,6 +19,9 @@ namespace vImageViewer
         public MainWindow()
         {
             InitializeComponent();
+
+            //View 와 ViewModel 간 연결
+            this.DataContext = new ViewModel.MainViewModel();
         }
     }
 }

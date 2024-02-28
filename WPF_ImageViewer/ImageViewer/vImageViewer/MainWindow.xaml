@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vImageViewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="Image Viewer" Height="450" Width="800">
+    <Grid Background="Black">
+        <Button Content="Image Load" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="78" Background="#FF080808" Foreground="#FFFDFAFA" Margin="487,369,0,0" Grid.Column="2"/>
+        <Button Content="Image Save" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="78" Background="#FF080808" Foreground="#FFFDFAFA" Margin="570,369,0,0" Grid.Column="2"/>
+        <TextBlock Text="DLL Ver : " Background="Black" Foreground="#FFFBFBFB" FontSize="10"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" VerticalAlignment="Top" Width="48" Background="Black" Foreground="#FFFBFBFB" FontSize="10" Margin="57,3,0,0"/>
     </Grid>
 </Window>
