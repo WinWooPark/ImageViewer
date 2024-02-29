@@ -2,10 +2,10 @@
 #include "CImageProcessor.h"
 #include "ImageProcessorAPI.h"
 
-_IPDLLTYPE_ void* GetInstance()
+_IPDLLTYPE_ void GetInstance(void* Instance)
 {
 	CImageProcessor* pImageProcessor = new CImageProcessor();
-	return static_cast<void*>(pImageProcessor);
+	Instance = static_cast<void*>(pImageProcessor);
 }
 
 _IPDLLTYPE_ void DeleteInstance(void* Instance)

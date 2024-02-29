@@ -1,6 +1,7 @@
 #pragma once
-#include <string>
 
+#include <string>
+using namespace std;
 #ifdef _DLLEXPORT
 #define _IPDLLTYPE_ __declspec(dllexport)
 #else
