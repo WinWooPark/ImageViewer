@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_ImageViewer.ViewModel;
 
 namespace WPF_ImageViewer
 {
@@ -16,9 +17,12 @@ namespace WPF_ImageViewer
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel _MainViewModel;
         public MainWindow()
         {
             InitializeComponent();
+            _MainViewModel = new MainViewModel();
+            this.DataContext = _MainViewModel;
         }
     }
 }

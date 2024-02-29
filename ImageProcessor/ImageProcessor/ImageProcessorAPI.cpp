@@ -1,31 +1,42 @@
 #include "pch.h"
+#include <memory>
 #include "CImageProcessor.h"
 #include "ImageProcessorAPI.h"
 
-_IPDLLTYPE_ void GetInstance(void* Instance)
+static CImageProcessor* pImageProcessor = nullptr;
+//static unique_ptr<CImageProcessor> pImageProcessor(new CImageProcessor)/* = nullptr*/;
+
+
+_IPDLLTYPE_ void GetInstance()
 {
-	CImageProcessor* pImageProcessor = new CImageProcessor();
-	Instance = static_cast<void*>(pImageProcessor);
+	if(pImageProcessor == nullptr)
+		pImageProcessor = new CImageProcessor();
 }
 
-_IPDLLTYPE_ void DeleteInstance(void* Instance)
+_IPDLLTYPE_ void DeleteInstance()
 {
-	static_cast<CImageProcessor*>(Instance);
-	if (Instance != nullptr)
+
+	if (pImageProcessor != nullptr)
 	{
-		delete Instance;
-		Instance = nullptr;
+		delete pImageProcessor;
+		pImageProcessor = nullptr;
 	}
+	else
+		pImageProcessor = nullptr;
 }
 
-_IPDLLTYPE_ string API_GetOpenCvVersion(void* Instance)
+_IPDLLTYPE_ string API_GetOpenCvVersion()
 {
-	CImageProcessor* pImageProcessor = static_cast<CImageProcessor*>(Instance);
-	return pImageProcessor->GetOpenCvVersion();
+	if (pImageProcessor == nullptr)
+		return "";
+	
+	return pImageProcessor->GetOpenCvVersion();	
 }
 
-_IPDLLTYPE_ string API_GetImageProcessorVersion(void* Instance)
+_IPDLLTYPE_ string API_GetImageProcessorVersion()
 {
-	CImageProcessor* pImageProcessor = static_cast<CImageProcessor*>(Instance);
+	if (pImageProcessor == nullptr)
+		return "";
+
 	return pImageProcessor->GetImageProcessorVersion();
 }

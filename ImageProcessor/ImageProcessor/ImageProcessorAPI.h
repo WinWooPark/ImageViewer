@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+using namespace std;
 
 #ifdef _DLLEXPORT
 #define _IPDLLTYPE_ __declspec(dllexport)
@@ -7,10 +8,10 @@
 #define _IPDLLTYPE_ __declspec(dllimport)
 #endif
 
-extern "C" _IPDLLTYPE_ void GetInstance(void* Instance);
+extern "C" _IPDLLTYPE_ void GetInstance();
 
-extern "C" _IPDLLTYPE_ void DeleteInstance(void* Instance);
+extern "C" _IPDLLTYPE_ void DeleteInstance();
 
-extern "C" _IPDLLTYPE_ string API_GetOpenCvVersion(void* Instance);
+extern "C" _IPDLLTYPE_ string API_GetOpenCvVersion();
 
-extern "C" _IPDLLTYPE_ string API_GetImageProcessorVersion(void* Instance);
+extern "C" _IPDLLTYPE_ string API_GetImageProcessorVersion();

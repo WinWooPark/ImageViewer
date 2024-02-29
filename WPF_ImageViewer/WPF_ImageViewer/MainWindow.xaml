@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="38" Margin="72,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" Text ="{Binding OpencvVer}"/>
+        <TextBlock HorizontalAlignment="Left" Height="38" Margin="72,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" Text ="{Binding DllVer}"/>
 
     </Grid>
 </Window>

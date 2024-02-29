@@ -4,13 +4,11 @@
 
 int main() 
 {
-	void* ptr = nullptr;
-	GetInstance(ptr);
+	GetInstance();
 
+	std::cout << API_GetOpenCvVersion() << std::endl;
+	std::cout << API_GetImageProcessorVersion() << std::endl;
 
-	std::cout << API_GetOpenCvVersion(ptr) << std::endl;
-	std::cout << API_GetImageProcessorVersion(ptr) << std::endl;
-
-	DeleteInstance(ptr);
+	DeleteInstance();
 	return 0;
 }
