@@ -5,12 +5,12 @@
 CImageProcessor::CImageProcessor(){}
 CImageProcessor::~CImageProcessor() {}
 
-string CImageProcessor::GetOpenCvVersion()
+const char* CImageProcessor::GetOpenCvVersion()
 {
     return CV_VERSION;
 }
 
-string CImageProcessor::GetImageProcessorVersion()
+const char* CImageProcessor::GetImageProcessorVersion()
 {
     return _DLL_VERSION_;
 }

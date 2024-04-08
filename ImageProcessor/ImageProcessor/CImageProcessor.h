@@ -12,8 +12,8 @@ public:
 	CImageProcessor();
 	~CImageProcessor();
 
-	string  GetOpenCvVersion();
+	const char* GetOpenCvVersion();
 
-	string  GetImageProcessorVersion();
+	const char* GetImageProcessorVersion();
 };
 

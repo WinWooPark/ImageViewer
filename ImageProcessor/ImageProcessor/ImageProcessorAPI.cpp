@@ -25,7 +25,7 @@ _IPDLLTYPE_ void DeleteInstance()
 		pImageProcessor = nullptr;
 }
 
-_IPDLLTYPE_ string API_GetOpenCvVersion()
+_IPDLLTYPE_ const char* API_GetOpenCvVersion()
 {
 	if (pImageProcessor == nullptr)
 		return "";
@@ -33,7 +33,7 @@ _IPDLLTYPE_ string API_GetOpenCvVersion()
 	return pImageProcessor->GetOpenCvVersion();	
 }
 
-_IPDLLTYPE_ string API_GetImageProcessorVersion()
+_IPDLLTYPE_ const char* API_GetImageProcessorVersion()
 {
 	if (pImageProcessor == nullptr)
 		return "";

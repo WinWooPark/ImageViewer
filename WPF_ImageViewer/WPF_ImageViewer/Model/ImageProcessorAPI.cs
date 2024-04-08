@@ -11,8 +11,8 @@ namespace WPF_ImageViewer.Model
     {
         [DllImport("ImageProcessor.dll", CallingConvention = CallingConvention.Cdecl)] public static extern void GetInstance();
         [DllImport("ImageProcessor.dll", CallingConvention = CallingConvention.Cdecl)] public static extern void DeleteInstance();
-        [DllImport("ImageProcessor.dll", CallingConvention = CallingConvention.Cdecl)] public static extern string API_GetOpenCvVersion();
-        [DllImport("ImageProcessor.dll", CallingConvention = CallingConvention.Cdecl)] public static extern string API_GetImageProcessorVersion();
+        [DllImport("ImageProcessor.dll", CallingConvention = CallingConvention.Cdecl)] public static extern IntPtr API_GetOpenCvVersion();
+        [DllImport("ImageProcessor.dll", CallingConvention = CallingConvention.Cdecl)] public static extern IntPtr API_GetImageProcessorVersion();
 
 
 

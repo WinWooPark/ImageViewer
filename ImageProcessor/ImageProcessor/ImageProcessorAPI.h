@@ -12,6 +12,6 @@ extern "C" _IPDLLTYPE_ void GetInstance();
 
 extern "C" _IPDLLTYPE_ void DeleteInstance();
 
-extern "C" _IPDLLTYPE_ string API_GetOpenCvVersion();
+extern "C" _IPDLLTYPE_ const char* API_GetOpenCvVersion();
 
-extern "C" _IPDLLTYPE_ string API_GetImageProcessorVersion();
+extern "C" _IPDLLTYPE_ const char* API_GetImageProcessorVersion();

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using WPF_ImageViewer.Model;
+using System.Runtime.InteropServices;
 
 namespace WPF_ImageViewer.ViewModel
 {
@@ -16,9 +17,10 @@ namespace WPF_ImageViewer.ViewModel
             
             ImageProcessorAPI.GetInstance(); //dll 내부 객체 생성
 
-            var OpencvVer = ImageProcessorAPI.API_GetOpenCvVersion();
-            
-            _DllVer = new string(ImageProcessorAPI.API_GetImageProcessorVersion());
+            IntPtr ptr = ImageProcessorAPI.API_GetOpenCvVersion();
+            string message = Marshal.PtrToStringAnsi(ptr);
+
+            _DllVer = message;
         }
 
         ~MainViewModel()
